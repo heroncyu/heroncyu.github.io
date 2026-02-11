@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="EL HAJAM Ayoub, BOUSSALEM Nassim, HERON Sajid" />
+    <meta name="description" content="Projet L2 Informatique - Simulation de gestion d'un restaurant" />
+    <title>RestaurantSim - Le Projet</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+    <style>
+        #definition2 {
+            border-color: #34495e;
+        }
+        #definition2 h2 {
+            color: #2c3e50; 
+            border: 3px solid #B3C4D5;
+            background-color: #B3C4D5;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo.png" alt="le logo de notre site" id="logo-site"/>
+        </a>
+        <h1>CROUS Sim</h1>
+        
+        <nav class="menu">
+        <h2>Le Menu</h2>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="attentes.html">Attentes</a></li>
+            <li><a href="notion.html">Notions</a></li>
+            <li><a href="fonctionnalite.html">Fonctionnalitées</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="avancement.html">Avancement</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <h1>Les notions de bases et contraintes du projet</h1>
+        <section>
+            <h2>Mécaniques de Jeu et Spécifications Techniques</h2>
+            <p>Ce projet repose sur une simulation de gestion en temps réel, intégrant des contraintes économiques et des algorithmes de comportement pour les personnages non-joueurs (PNJ).</p>
+        </section>
+
+        <section>
+            <h2>1. Cycle de Jeu et Temporalité</h2>
+            <p>Le déroulement du jeu est structuré en deux phases distinctes pour séparer l'action de la stratégie.</p>
+            <ul>
+                <li id="definition" class="cadre">
+                    <h2>Phase de Service (Temps Réel) :</h2>
+                    <p>Simule une journée d'activité de 10h à 22h, soit une durée de 6 minutes réelles. Le moteur gère les déplacements et les interactions. Le joueur peut contrôler le temps via des fonctions de pause et d'accélération.</p>
+                </li>
+                <li id="definition2" class="cadre">
+                    <h2>Phase de Gestion (Temps Arrêté) :</h2>
+                    <p>Cette phase s'active une fois le dernier client parti. Elle est dédiée à l'analyse du bilan financier et aux prises de décision stratégiques (recrutement, agrandissement) sans pression temporelle.</p>
+                </li>
+                
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Système de Zonage et Construction</h2>
+            <p>
+                L'architecture du jeu repose sur une grille spatiale de <em>20x20</em> cases, segmentée en deux espaces fonctionnels : une zone constructible dédiée à l'aménagement intérieur (lignes 1 à 16) et une zone de flux (trottoir et route) réservée à l'apparition des clients. Le joueur débute avec une structure de base (<em>5x4</em> cases) qu'il doit faire évoluer pour soutenir la croissance de son activité. L'expansion du restaurant suit une logique d'adjacence stricte : toute nouvelle parcelle acquise doit être contiguë à une case déjà possédée, ce qui impose une réflexion stratégique sur le placement des nouvelles zones (Cuisine, Salle ou Stockage) et l'optimisation des déplacements.
+            </p>
+        </section>
+        
+
+        <section>
+            <h2>3. Modèle Economique</h2>
+            <p>La viabilité du restaurant repose sur un équilibre strict entre recettes et dépenses, la gestion de la trésorerie doit être anticipée pour éviter la banqueroute immédiate en fin de journée.</p>
+            <p>Structure des Coûts Les dépenses sont segmentées en charges fixes (liées à la structure) et variables (liées à l'activité), calculées selon les règles suivantes:</p>
+            <table class="economy-table">
+                <thead>
+                    <tr>
+                        <th>Catégorie</th>
+                        <th>Poste de Dépense</th>
+                        <th>Formule de Calcul / Coût</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3" class="category-cell">Charges Fixes<small>(Quotidiennes)</small></td>
+                        <td><strong>Loyer</strong></td>
+                        <td>10 x Nombre de cases occupées</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Électricité</strong></td>
+                        <td>50$ (Fixe) + (5 x Appareils) + (2 x Cases Stockage)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Salaires</strong></td>
+                        <td>Salaire de base x (1 + 0,2 x Niveau Étoiles)</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="4" class="category-cell">Charges Variables<small>(Ponctuelles)</small></td>
+                        <td><strong>Nettoyage</strong></td>
+                        <td>10 x par action de maintenance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Réparations</strong></td>
+                        <td>50% du prix d'achat de l'appareil</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Publicité</strong></td>
+                        <td>25$ pour une journée (Optionnel)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Amendes</strong></td>
+                        <td>500$ (En cas d'échec au contrôle sanitaire)</td>
+                    </tr>
+                </tbody>
+            </table>
+                <p><strong>Condition de Faillite :</strong> Le bilan est effectué automatiquement à la fermeture. Si le calcul <em>(Revenus - Dépenses)</em> entraîne un solde bancaire négatif, la partie se termine par un <em>Game Over</em>.</p>
+            
+        </section>
+        
+        <section>
+            <h2>4. Gestion des PNJ</h2>
+            <p>Le comportement des PNJ est régi par des variables évolutives influençant la difficulté du jeu.</p>
+            <ul>
+                <li><p><strong>Clients et Satisfaction :</strong> Chaque client arrive avec une satisfaction de 100%, qui diminue chaque seconde en fonction du temps d'attente. Le niveau final de satisfaction détermine directement le montant du pourboire.</p></li>
+                <li>
+                    <p><strong>Compétences du Personnel :</strong> Les employés (cuisiniers et serveurs) ont un niveau de compétence de 0 à 5 étoiles.</p>
+                    <ul>
+                        <li><p>Chaque étoile améliore la vitesse d'exécution (+10% à +15%).</p></li>
+                        <li><p>En contrepartie, le salaire augmente selon la formule : <em>SalaireBase</em> x (1 + 0,2 x <em>Etoiles</em>).</p></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+                
+    </main>
+    <footer>
+        <span class="lien-haut">
+            <a href="#">Retour en haut de la page</a>
+        </span>
+        <span>
+            <time datetime="2026-02">Février 2026</time> 
+            HERON Sajid EL HAJAM Ayoub et BOUSSALEM Nassim, L2 Informatique TD C, UE Développement Web
+        </span>
+        <span>
+            CY Cergy Paris Université -
+            <a href="https://www.cyu.fr">
+                <img src="images/logo.svg" alt="le logo de l'université" id="logo-univ"/>
+            </a>
+        
+        </span>
+        
+    </footer>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="EL HAJAM Ayoub, BOUSSALEM Nassim, HERON Sajid" />
+    <meta name="description" content="Projet L2 Informatique - Simulation de gestion d'un restaurant" />
+    <title>CROUS Sim - Accueil</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+    <style>
+        #menu-lateral {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            background-color: #2C1E10;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #menu-lateral nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #menu-lateral nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            border-radius: 3px;
+        }
+
+        #menu-lateral nav a:hover {
+            background-color: #783f04;
+        }
+
+        #presentation-projet {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        #presentation-projet .texte-projet {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        #presentation-projet figure {
+            flex: 0 0 auto;
+            width: 300px;
+        }
+
+        .highlight {
+            background-color: #fff3e0;
+            border-left: 4px solid #F7931A;
+            border-radius: 0 5px 5px 0;
+            margin: 15px 0;
+        }
+        #citationwiki {
+            border-color: #2C1E10; 
+        }
+
+        #citationwiki h2 {
+            color: #2C1E10; 
+            border: 3px solid #2C1E10;
+            background-color:#936536;
+            border-radius: 5px;
+        }
+        footer span.lien-haut-footer {
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body id="haut-de-page">
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo.png" alt="le logo de notre site" id="logo-site"/>
+        </a>
+        <h1>CROUS Sim</h1>
+        
+        <nav class="menu">
+        <h2>Le Menu</h2>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="attentes.html">Attentes</a></li>
+            <li><a href="notion.html">Notions</a></li>
+            <li><a href="fonctionnalite.html">Fonctionnalitées</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="avancement.html">Avancement</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    
+    <aside id="menu-lateral">
+        <nav>
+            <ul>
+                <li><a href="#section-description">Description</a></li>
+                <li><a href="#section-motivation">Motivation</a></li>
+                <li><a href="#section-technologies">Technologies</a></li>
+                <li><a href="#section-liens">Ressources</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <h1>Bienvenue sur le site de notre projet : RestaurantSim</h1>
+
+        <section id="section-description">
+            <h2>Description du projet</h2>
+
+            <div id="presentation-projet">
+                <div class="texte-projet">
+                    <p>
+                        <strong>CROUS Sim</strong> est un <em>jeu de gestion de restaurant</em>
+                        développé pour notre UE de Génie Logiciel et Projet
+                        (<abbr title="Génie Logiciel et Projet">GLP</abbr>) en
+                        <time datetime="2026">2026</time>.
+                    </p>
+                    <p>
+                        Voici le concept : notre jeu doit permettre au joueur de
+                        <strong>construire</strong>, de <strong>configurer</strong> et de
+                        <strong>gérer</strong> le déroulement de son propre restaurant.
+                        Le coeur du jeu est de devoir maintenir un équilibre entre la
+                        <em>satisfaction des clients</em> et le <em>gain financier</em>.
+                    </p>
+
+                    <div class="cadre" id="citation">
+                        <h2>Citation</h2>
+
+                        <blockquote>
+                            Le jeu intègre le support d'objets et d'événements variés ainsi
+                            qu'un certain niveau d'<strong>intelligence artificielle</strong>
+                            et d'<strong>automatisme</strong> pour rendre l'expérience
+                            immersive et stimulante.
+                        </blockquote>
+                        <p>
+                            Source :
+                            <a href="https://depinfo.u-cergy.fr/~tliu/gl/glp_50_projets.pdf#page=23">
+                                Liste des 50 projets qui furent proposés au début de l'UE
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-motivation">
+            <h2>Nos motivations</h2>
+
+            
+            <p>
+                Nous avons choisi ce projet en <strong>premier choix</strong> car nous
+                voulions découvrir l'envers du décor d'un jeu vidéo. Même si nous sommes
+                tous des joueurs, la création de jeu est un autre défi : il faut imaginer
+                toutes les règles, équilibrer le jeu pour qu'il reste amusant et construire
+                tout l'univers.
+            </p>
+            <p style="font-size: 1.1em; text-align: center; margin: 20px 0;">
+                Parmi tous les types de jeux possibles, nous avons choisi le
+                <em>jeu de gestion de restaurant</em> car c'est un thème qui plaisait à
+                toute l'équipe et qui permet de relever des défis intéressants.
+            </p>
+
+            <div class="cadre" id="citationwiki">
+                <h2>Citation</h2>
+                <blockquote cite="https://fr.wikipedia.org/wiki/Jeu_de_gestion">
+                    <p>
+                        Un jeu de gestion est un type de jeu de société, de jeu de rôle par forum ou de jeu vidéo dans lequel le joueur dirige le plus souvent une entreprise, une ville, ou un pays, et où il doit gérer les différents facteurs économiques.
+                    </p>
+                </blockquote>
+                <p>
+                    Source :
+                    <a href="https://fr.wikipedia.org/wiki/Jeu_de_gestion">
+                        Wikipédia - Jeu de gestion
+                    </a>
+                </p>
+            </div>
+            <div class="cadre" id="definition">
+                <h2>Le saviez-vous ?</h2>
+                <p>
+                    Le marché des jeux de <em>simulation et gestion</em> représente
+                    plusieurs <strong>milliards de dollars</strong> en
+                    <time datetime="2024">2026</time>. Un jeu comme
+                    <strong>Stardew Valley</strong>, développé par
+                    <em>une seule personne</em>, ont prouvé qu'un petit projet
+                    universitaire peut mener loin.
+                </p>
+            </div>
+        </section>
+
+        
+        <section id="section-technologies">
+            <h2>Technologies/méthodes utilisées</h2>
+
+            <ul>
+                <li><strong>Langage principal</strong> : Java</li>
+                <li><strong>Interface graphique</strong> : JavaSwing</li>
+                <li><strong>Gestion de version</strong> :                     
+                    <a href="https://github.com">
+                    GitHub
+                    </a>
+                </li>
+                <li><strong>Documentation</strong> : Javadoc, diagrammes UML et document de spécifications</li>
+            </ul>
+        </section>
+
+        
+        <section id="section-liens">
+            <h2>Ressources et liens utiles</h2>
+
+            <p>Quelques ressources en lien avec notre projet</p>
+
+            <ul>
+                <li>
+                    L'espace du cours de l'UE GLP sur
+                    <a href="https://depinfo.u-cergy.fr/~tliu/glp.php">
+                        la plateforme CYU
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <span class="lien-haut-footer">
+            <a href="#">Retour en haut de la page</a>
+        </span>
+        <span>
+            <time datetime="2026-02">Février 2026</time> 
+            HERON Sajid EL HAJAM Ayoub et BOUSSALEM Nassim, L2 Informatique TD C, UE Développement Web
+        </span>
+        <span>
+            CY Cergy Paris Université -
+            <a href="https://www.cyu.fr">
+                <img src="images/logo.svg" alt="le logo de l'université" id="logo-univ"/>
+            </a>
+        
+        </span>
+        
+    </footer>
+
+</body>
+</html>

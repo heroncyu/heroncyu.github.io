@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="EL HAJAM Ayoub, BOUSSALEM Nassim, HERON Sajid" />
+    <meta name="description" content="Projet L2 Informatique - Simulation de gestion d'un restaurant" />
+    <title>RestaurantSim - Les Attentes</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo.png" alt="le logo de notre site" id="logo-site"/>
+        </a>
+        <h1>CROUS Sim</h1>
+        
+        <nav class="menu">
+        <h2>Le Menu</h2>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="attentes.html">Attentes</a></li>
+            <li><a href="notion.html">Notions</a></li>
+            <li><a href="fonctionnalite.html">Fonctionnalitées</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="avancement.html">Avancement</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <h1>Le Projet et ses attentes</h1>
+
+        <section>
+            <h2>L'énoncé initial</h2>
+
+            <p>
+                Notre projet faisait partie d'une liste de
+                <a href="https://depinfo.u-cergy.fr/~tliu/gl/glp_50_projets.pdf#page=23">
+                    50 sujets proposés
+                </a>
+                au début de l'UE de GLP. Voici la description qui nous a convaincus de le choisir en premier choix :
+            </p>
+
+            <div class="cadre" id="citation">
+                <h2>Énoncé</h2>
+                <blockquote>
+                    <p>
+                        Jeu de gestion d'un restaurant. Permettre au joueur de
+                        construire, de configurer et de gérer le déroulement du
+                        restaurant. L'objectif est d'avoir un équilibre entre la
+                        satisfaction des clients et le gain financier. Support des
+                        objets et des événements variés. Support d'un certain
+                        niveau d'intelligence et d'automatisme.
+                    </p>
+                </blockquote>
+            </div>
+        </section>
+
+        <section>
+            <h2>Les précisions du TD 1</h2>
+
+            <p>
+                Une fois le sujet attribué notre enseignant nous a donné
+                des précisions lors du premier
+                TD. Voici les grandes lignes :
+            </p>
+
+            <h3>Le monde du jeu</h3>
+            <ul>
+                <li>Jeu de <strong>gestion financière</strong> sur une
+                    <strong>grille 2D en cases</strong>, vue aérienne</li>
+                <li>Beaucoup d'éléments <strong>interactifs</strong></li>
+                <li>Restaurant initial déjà équipé, décomposé en
+                    <strong>3 zones</strong> : salle, cuisine et
+                    stockage</li>
+                <li>Possibilité d'<strong>acheter plus de surface</strong>
+                    et d'agrandir les zones (taille max définie)</li>
+            </ul>
+
+            <h3>Le personnel</h3>
+            <ul>
+                <li><strong>1 serveur</strong> et <strong>1 cuisinier</strong>
+                    gratuits dès le début</li>
+                <li>Embauche de personnel supplémentaire payant</li>
+                <li>Le personnel peut <strong>évoluer</strong> via des
+                    formations payantes</li>
+                <li>Nombre de cuisiniers limité par la
+                    <em>taille de la cuisine</em></li>
+            </ul>
+
+            <h3>Économie et progression</h3>
+            <ul>
+                <li>Gagner de l'argent, dépenser, risquer la
+                    <strong>faillite</strong></li>
+                <li><strong>Qualité de nourriture variable</strong></li>
+                <li>Achat de <strong>meubles et décorations</strong></li>
+                <li>Système de <strong>trophées</strong></li>
+            </ul>
+
+            <div class="cadre" id="definition">
+                <h2>La question clé</h2>
+                <p>
+                    La problématique centrale posée par l'enseignant :
+                    <em>Quelles sont les dépenses et quelles
+                    sont les revenus ?</em> c'est
+                    autour de cet équilibre que tout le jeu se construit.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Et après ?</h2>
+
+            <p>
+                À partir de ces consignes, notre équipe a rédigé un
+                <strong>document de spécifications</strong> détaillé. Vous pouvez
+                en découvrir le contenu sur les pages
+                <a href="notion.html">Notions</a> et <a href="fonctionnalite.html">Fonctionnalitées</a>.
+            </p>
+        </section>
+        <section>
+            <h2>Premier diagramme de classes</h2>
+
+            <p>
+                Suite aux consignes du second TD, notre enseignant
+                nous a demandé de réaliser un <strong>diagramme de classes
+                de données simplifié</strong> pour poser les bases de notre jeu.
+            </p>
+
+            <figure>
+                <img src="images/diagramme.png"
+                     alt="Diagramme de classes de données simplifié montrant les relations"/>
+                <figcaption>
+                    Diagramme de classes de données simplifié
+                    (Première version)
+                </figcaption>
+            </figure>
+
+            <p>
+                Ce diagramme permet de mettre en évidence les données principales et leurs relations.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <span class="lien-haut">
+            <a href="#">Retour en haut de la page</a>
+        </span>
+        <span>
+            <time datetime="2026-02">Février 2026</time> 
+            HERON Sajid EL HAJAM Ayoub et BOUSSALEM Nassim, L2 Informatique TD C, UE Développement Web
+        </span>
+        <span>
+            CY Cergy Paris Université -
+            <a href="https://www.cyu.fr">
+                <img src="images/logo.svg" alt="le logo de l'université" id="logo-univ"/>
+            </a>
+        
+        </span>
+        
+    </footer>
+
+</body>
+</html>

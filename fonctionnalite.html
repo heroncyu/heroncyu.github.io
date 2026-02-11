@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="EL HAJAM Ayoub, BOUSSALEM Nassim, HERON Sajid" />
+    <meta name="description" content="Projet L2 Informatique - Simulation de gestion d'un restaurant" />
+    <title>RestaurantSim - Fonctionnalitées</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo.png" alt="le logo de notre site" id="logo-site"/>
+        </a>
+        <h1>CROUS Sim</h1>
+        
+        <nav class="menu">
+        <h2>Le Menu</h2>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="attentes.html">Attentes</a></li>
+            <li><a href="notion.html">Notions</a></li>
+            <li><a href="fonctionnalite.html">Fonctionnalitées</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="avancement.html">Avancement</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <h1>Implémentation Fonctionnelle et Expérience Utilisateur</h1>
+        <div>
+            <p>L'application est conçue autour d'une interface graphique (GUI) intuitive permettant une interaction fluide entre le joueur et les systèmes de simulation. Voici le détail des modules fonctionnels implémentés.</p>
+        </div>
+        
+        <section>
+            <h2>1. Interface de Contrôle et Navigation (HUD)</h2>
+            <table class="hud-table">
+                <thead>
+                    <tr>
+                        <th>Module HUD</th>
+                        <th>Fonctionnalités Techniques</th>
+                        <th>Interactions Joueur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Contrôle Temporel</td>
+                        <td>Affichage format HH:MM:SS. Cycle jour/nuit (10h-22h).</td>
+                        <td>Boutons Pause(arrêt simulation) et Accélération (x2).</td>
+                    </tr>
+                    <tr>
+                        <td>Caméra &amp; Vue</td>
+                        <td>Caméra mobile avec <em>clamping</em> (limites de carte) pour éviter la sortie de zone.</td>
+                        <td>Navigation libre (Axes X/Z) et Zoom dynamique (In/Out).</td>
+                    </tr>
+                    <tr>
+                        <td>Moniteur Financier</td>
+                        <td>Calcul en temps réel du solde de trésorerie.</td>
+                        <td>Survol (Hover) : Affiche le détail des recettes vs charges prévisionnelles.</td>
+                    </tr>
+                    <tr>
+                        <td>Système d'Alertes</td>
+                        <td>Notifications visuelles (Icônes) pour les stocks critiques et événements.</td>
+                        <td>Clic pour ouvrir la modale d'information ou centrer la caméra.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>L'interface utilisateur permanente (Heads-Up Display) centralise les informations critiques et les outils de contrôle temporel.</p>
+            <ul>
+                <li><p><strong>Contrôle du Temps : </strong>Le moteur de simulation intègre une horloge au format HH:MM:SS. Le joueur dispose de commandes pour mettre le jeu en pause ou accélérer la vitesse (x2) afin de rythmer les phases creuses.</p></li>
+                <li><p><strong>Caméra et Vue : </strong>La navigation se fait via une caméra mobile sur les axes X/Z avec des limites de bordures (clamping) pour empêcher la sortie de la carte. Un système de zoom permet d'alterner entre vue globale et détails.</p></li>
+                <li><p><strong>Indicateurs Financiers :</strong>Le HUD affiche en permanence la trésorerie actuelle et permet de consulter au survol les revenus en cours et les charges prévisionnelles de la soirée.</p></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Modules de Gestion (Gameplay)</h2>
+            <p>Durant la phase active, le joueur interagit via trois menus contextuels majeurs :</p>
+            <ol>
+                <li><p><strong>Module de Construction :</strong> Permet le placement des structures et du mobilier. Le système fournit une <em>prévisualisation visuelle</em> (ghosting) indiquant la validité du placement sur la grille.</p></li>
+                <li><p><strong>Gestion des Ressources Humaines :</strong> Un tableau de bord permet de visualiser l'effectif, consulter les niveaux de compétence (étoiles) et effectuer des actions administratives : recrutement, licenciement ou formation payante pour améliorer les statistiques.</p></li>
+                <li><p><strong>Logistique et Stocks :</strong> Un menu dédié permet l'achat d'ingrédients (à l'unité ou réassort complet). Un système d'alerte visuelle prévient le joueur lorsque les stocks sont bas.</p></li>
+            </ol>
+        </section>
+        
+        <section>
+            <h2>3. Système de Feedback Visuel et Événementiel</h2>
+            <p>Pour maximiser la compréhension de l'état du jeu sans surcharger l'interface textuelle, des indicateurs visuels intra-diégétiques ont été développés comme par exemple :</p>
+            <section id="definition" class="cadre">
+                <h2>États des Agents</h2>
+                <p>La satisfaction des clients est représentée par des émojis dynamiques au-dessus de leur tête. De même, des barres de progression indiquent l'avancement de la préparation des plats en cuisine.</p>
+                <figure>
+                    <img src="images/client.png" alt="Illustration de la satisfaction du client" width="400" height="600"/>
+                    <figcaption>Illustration de la satisfaction d'un client du restaurant</figcaption>
+                </figure>
+            </section>
+        </section>
+
+    </main>
+
+    <footer>
+        <span class="lien-haut">
+            <a href="#">Retour en haut de la page</a>
+        </span>
+        <span>
+            <time datetime="2026-02">Février 2026</time> 
+            HERON Sajid EL HAJAM Ayoub et BOUSSALEM Nassim, L2 Informatique TD C, UE Développement Web
+        </span>
+        <span>
+            CY Cergy Paris Université -
+            <a href="https://www.cyu.fr">
+                <img src="images/logo.svg" alt="le logo de l'université" id="logo-univ"/>
+            </a>
+        
+        </span>
+        
+    </footer>
+</body>
+</html>
